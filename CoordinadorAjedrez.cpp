@@ -26,5 +26,104 @@ void coordinador::dibuja() {
 			glEnable(GL_LIGHTING);
 			glDisable(GL_TEXTURE_2D);
 			break;
+		
+		case MENU_1C1:
+			glEnable(GL_TEXTURE_2D);
+			glDisable(GL_LIGHTING);
+	
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			
+			//JUGAR CON LOS VÉRTICES HASTA ATINAR
+			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
+			glEnd();
+	
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		
+		case RATON:
+			glEnable(GL_TEXTURE_2D);
+			glDisable(GL_LIGHTING);
+	
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			
+			//JUGAR CON LOS VÉRTICES HASTA ATINAR
+			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
+			glEnd();
+	
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		
+		case GANA_NEGRAS:
+			glEnable(GL_TEXTURE_2D);
+			glDisable(GL_LIGHTING);
+	
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			
+			//JUGAR CON LOS VÉRTICES HASTA ATINAR
+			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
+			glEnd();
+	
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+				case GANA_BLANCAS:
+			glEnable(GL_TEXTURE_2D);
+			glDisable(GL_LIGHTING);
+	
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			
+			//JUGAR CON LOS VÉRTICES HASTA ATINAR
+			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
+			glEnd();
+	
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		
+		case TABLAS:
+			glEnable(GL_TEXTURE_2D);
+			glDisable(GL_LIGHTING);
+	
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			
+			//JUGAR CON LOS VÉRTICES HASTA ATINAR
+			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
+			glEnd();
+	
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case JUEGO:
+
+			mundo.dibuja();
+
+			break;
+
+		default:
+			break;
+		
 	}
 }
