@@ -1,5 +1,6 @@
 #include "CoordinadorAjedrez.h"
 
+//NO TOCAR ESTO
 void coordinador::dibuja() {
 	gluLookAt(15, 18, 48,    // ubicación inicial del ojo (perspectiva)
 		15, 18, 0,			 // punto hacia el que mira el ojo
@@ -14,10 +15,12 @@ void coordinador::dibuja() {
 	
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
-			glTexCoord2d(0, 0); glVertex2d(-10, 45); //Esquina izquierda superior
+			
+			//JUGAR CON LOS VÉRTICES HASTA ATINAR
+			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
 			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(55, -5); //Esquina derecha inferior
-			glTexCoord2d(1, 0); glVertex2d(55, 45); //Esquina derecha superior
+			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
 			glEnd();
 	
 			glEnable(GL_LIGHTING);
