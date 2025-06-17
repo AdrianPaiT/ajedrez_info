@@ -120,6 +120,13 @@ void coordinador::dibuja() {
 
 			mundo.dibuja();
 
+				if (mundo.get_Jaques() != 0) {
+
+					mundo.borrar();
+
+	
+				}
+
 			break;
 
 		default:
