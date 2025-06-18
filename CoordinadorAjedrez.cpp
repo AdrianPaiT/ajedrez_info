@@ -17,10 +17,10 @@ void coordinador::dibuja() {
 			glColor3f(1, 1, 1);
 			
 			//JUGAR CON LOS VÉRTICES HASTA ATINAR
-			glTexCoord2d(0, 0); glVertex2d(-10, 44); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-10, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(50, -5); //Esquina derecha inferior
-			glTexCoord2d(1, 0); glVertex2d(50, 44); //Esquina derecha superior
+			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
 			glEnable(GL_LIGHTING);
