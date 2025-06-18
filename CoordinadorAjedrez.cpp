@@ -120,12 +120,22 @@ void coordinador::dibuja() {
 
 			mundo.dibuja();
 
-				if (mundo.get_Jaques() != 0) {
+			if (mundo.get_Jaques() != 0) {
 
-					mundo.borrar();
+				mundo.borrar();
 
-	
-				}
+			switch (mundo.get_Jaques()) {
+				case 1:
+				estado = GANA_NEGRAS;
+				break;
+			case 2:
+				estado = GANA_BLANCAS;
+				break;
+			case 3:
+				estado = TABLAS;
+				break;
+		}
+	}
 
 			break;
 
