@@ -1,13 +1,11 @@
 #include "CoordinadorAjedrez.h"
 
-//NO TOCAR ESTO
 void coordinador::dibuja() {
 	gluLookAt(15, 18, 48,    // ubicación inicial del ojo (perspectiva)
 		15, 18, 0,			 // punto hacia el que mira el ojo
 		0.0, 1.0, 0.0);      // orientación hacia el eje Y+ 
 
 //ESTADOS
-
 	switch(estado){
 		case START:
 			glEnable(GL_TEXTURE_2D);
@@ -16,10 +14,9 @@ void coordinador::dibuja() {
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
 			
-			//JUGAR CON LOS VÉRTICES HASTA ATINAR
-			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(0, 0); glVertex2d(-15, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-15, -4.5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -4.5); //Esquina derecha inferior
 			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
@@ -35,9 +32,9 @@ void coordinador::dibuja() {
 			glColor3f(1, 1, 1);
 			
 			//JUGAR CON LOS VÉRTICES HASTA ATINAR
-			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(0, 0); glVertex2d(-15, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-15, -4.5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -4.5); //Esquina derecha inferior
 			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
@@ -52,10 +49,9 @@ void coordinador::dibuja() {
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
 			
-			//JUGAR CON LOS VÉRTICES HASTA ATINAR
-			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(0, 0); glVertex2d(-15, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-15, -4.5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -4.5); //Esquina derecha inferior
 			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
@@ -70,9 +66,9 @@ void coordinador::dibuja() {
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
 			
-			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(0, 0); glVertex2d(-15, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-15, -4.5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -4.5); //Esquina derecha inferior
 			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
@@ -86,10 +82,9 @@ void coordinador::dibuja() {
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
 			
-			//JUGAR CON LOS VÉRTICES HASTA ATINAR
-			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(0, 0); glVertex2d(-15, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-15, -4.5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -4.5); //Esquina derecha inferior
 			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
@@ -104,9 +99,9 @@ void coordinador::dibuja() {
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
 			
-			glTexCoord2d(0, 0); glVertex2d(-14, 41); //Esquina izquierda superior
-			glTexCoord2d(0, 1); glVertex2d(-14, -5); //Esquina izquierda inferior
-			glTexCoord2d(1, 1); glVertex2d(45, -5); //Esquina derecha inferior
+			glTexCoord2d(0, 0); glVertex2d(-15, 41); //Esquina izquierda superior
+			glTexCoord2d(0, 1); glVertex2d(-15, -4.5); //Esquina izquierda inferior
+			glTexCoord2d(1, 1); glVertex2d(45, -4.5); //Esquina derecha inferior
 			glTexCoord2d(1, 0); glVertex2d(45, 41); //Esquina derecha superior
 			glEnd();
 	
