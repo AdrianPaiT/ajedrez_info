@@ -49,5 +49,45 @@ public:
 	void Seleccionar_Pieza_1VS1(Vector origen);  // Selecciona pieza en coordenadas
 	void Mover_Pieza_1VS1(Vector destino);       // Mueve pieza a coordenadas
 	void inicializa(const int& tipojuego); // Inicializa tablero según modo de juego
+	void Auto_Mov();
+
+
+
+
+//PRUEBA para jaquemate?
+
+bool Seleccionar_pieza_x(int, int);
+bool Gestiona_movimiento(int,int,bool);
+
+bool color_check(int R, int G, int B);           
+bool Jaque(bool col);      
+
+void Comprobar_Jaque();              
+void Comprobar_JaqueMate(); 
+
+
+//Situaciones posibles
+
+bool Get_JaqueBlancas() { 
+	return jaqblancas; 
+}
+
+bool Get_JaqueMateBlancas() {
+	if (jaqmateblancas && jaqblancas)
+		return true;
+	return false;
+}
+
+bool Get_JaqueNegras() { 
+	return jaqnegras; 
+}
+
+bool Get_JaqueMateNegras() {
+	if (jaqmatenegras && jaqnegras)
+		return true;
+	return false;
+}
+
+
 
 };
