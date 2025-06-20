@@ -356,15 +356,20 @@ void Tablero::Comprobar_JaqueMate() {
 
 	for (int i = 0; i < 8 && !escapar; i++) {
 		for (int j = 0; j < 10 && !escapar; j++) {
-			
-			if (Selec_Mover(l, k, true)) {  //Mov permitido???
-				esJaqueMate = false;
-				escapar = true;
+			//l y k deberían ser las variables de un segundo par de bucles for anidados
+			//Pendiente verificar lógica de movimientos en visual
+		for (int l = 0; l < 8 && !escapar; l++) {
+			for (int k = 0; k < 10 && !escapar; k++) {
+				if (Selec_Mover(l, k, true)) {  //Mov permitido???
+					esJaqueMate = false;
+					escapar = true;
+				}
+			}
 		}
 	}
 	if (esJaqueMate) {
 		if (color) {
-			jaqmateblancas = true;
+		jaqmateblancas = true;
 		}
 	else {
 		jaqmateblancas = false;
