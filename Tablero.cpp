@@ -54,11 +54,15 @@ void Tablero::dibuja()
 
 
 
-	// GESTIÓN DEL MARCADOR
-	DibujarMarcadorTurno();
+	//---------------------Nota: NO cambiar el orden de dibujado bajo ningún concepto porque se lía parda xd---------------------
 
+
+	
 	// GESTIÓN DE LOS MOVIMIENTOS POSIBLES
 	DibujarMovimientosPosibles();
+
+	// GESTIÓN DEL MARCADOR
+	DibujarMarcadorTurno();
 
 
 
@@ -360,7 +364,6 @@ void Tablero::inicializa(const int& tipojuego)
 
 }
 
-
 void Tablero::DibujarMarcadorTurno() {
 	// Dibujar fondo del marcador
 	glDisable(GL_LIGHTING);
@@ -375,9 +378,32 @@ void Tablero::DibujarMarcadorTurno() {
 	glVertex3f(marcador_x, marcador_y + marcador_alto, 0);
 	glEnd();
 
+
+	// Dibujar icono del rey
+	glEnable(GL_TEXTURE_2D);
+
+	if (color) { // Turno blancas
+		ETSIDI::Sprite rey_w = { "imagenes/rey_w.png" };
+		glPushMatrix();
+		glTranslatef(marcador_x - 4.0f, marcador_y - 0.8f, 1); // Ajusta posición
+		rey_w.setSize(4.0, 4.0);
+		rey_w.draw();
+		glPopMatrix();
+	}
+	else {   // Turno negras
+		ETSIDI::Sprite rey_b = { "imagenes/rey_b.png" };
+		glPushMatrix();
+		glTranslatef(marcador_x - 4.0f, marcador_y - 1.1f, 1); // Ajusta posición
+		rey_b.setSize(4.5, 4.5);
+		rey_b.draw();
+		glPopMatrix();
+	}
+
+
 	// Texto
-	glColor3f(1, 1, 1); // Blanco
-	ETSIDI::setFont("fuentes/Minecraftia-Regular.ttf", 16);
+	glDisable(GL_TEXTURE_2D);
+	glColor3f(1, 1, 1);
+	ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
 	ETSIDI::printxy(color ? "TURNO: BLANCAS" : "TURNO: NEGRAS",
 		marcador_x + 2, marcador_y + 1);
 
