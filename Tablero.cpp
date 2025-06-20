@@ -347,3 +347,26 @@ void Tablero::inicializa(const int& tipojuego)
 
 }
 
+
+
+
+void Tablero::Comprobar_JaqueMate() {
+	bool esJaqueMate = true;
+	bool escapar = false;
+
+	for (int i = 0; i < 8 && !escapar; i++) {
+		for (int j = 0; j < 10 && !escapar; j++) {
+			
+			if (Selec_Mover(l, k, true)) {  //Mov permitido???
+				esJaqueMate = false;
+				escapar = true;
+		}
+	}
+	if (esJaqueMate) {
+		if (color) {
+			jaqmateblancas = true;
+		}
+	else {
+		jaqmateblancas = false;
+	}
+}
