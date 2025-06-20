@@ -43,8 +43,13 @@ private:
 	bool jaqmatenegras = false;            // Rey negro en jaque mate
 	bool tablas = false;                   // Estado de empate
 
+	//Variables para la implementación del marcador
+	float marcador_x, marcador_y, marcador_ancho, marcador_alto;
+	int marcador_colorR, marcador_colorG, marcador_colorB;
+
 public:
 	void dibuja();
+	void DibujarMarcadorTurno();
 
 	void Seleccionar_Pieza_1VS1(Vector origen);  // Selecciona pieza en coordenadas
 	void Mover_Pieza_1VS1(Vector destino);       // Mueve pieza a coordenadas
