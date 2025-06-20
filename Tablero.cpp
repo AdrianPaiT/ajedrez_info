@@ -54,6 +54,9 @@ void Tablero::dibuja()
 
 
 
+	// GESTIÓN DEL MARCADOR
+	DibujarMarcadorTurno();
+
 	// GESTIÓN DE LOS MOVIMIENTOS POSIBLES
 	DibujarMovimientosPosibles();
 
@@ -345,9 +348,42 @@ void Tablero::inicializa(const int& tipojuego)
 	color = true;	    // INSTRUCCIÓN PARA QUE LAS BLANCAS EMPIECEN
 	jaqblancas = jaqmateblancas =  jaqnegras = jaqmatenegras = tablas = false;
 
+
+	// Configuración del marcador
+	marcador_x = 5.0f;
+	marcador_y = 34.0f;
+	marcador_ancho = 30.0f;
+	marcador_alto = 3.0f;
+	marcador_colorR = 50;
+	marcador_colorG = 50;
+	marcador_colorB = 50;
+
 }
 
 
+void Tablero::DibujarMarcadorTurno() {
+	// Dibujar fondo del marcador
+	glDisable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
+	// Fondo
+	glColor3ub(marcador_colorR, marcador_colorG, marcador_colorB);
+	glBegin(GL_QUADS);
+	glVertex3f(marcador_x, marcador_y, 0);
+	glVertex3f(marcador_x + marcador_ancho, marcador_y, 0);
+	glVertex3f(marcador_x + marcador_ancho, marcador_y + marcador_alto, 0);
+	glVertex3f(marcador_x, marcador_y + marcador_alto, 0);
+	glEnd();
+
+	// Texto
+	glColor3f(1, 1, 1); // Blanco
+	ETSIDI::setFont("fuentes/Minecraftia-Regular.ttf", 16);
+	ETSIDI::printxy(color ? "TURNO: BLANCAS" : "TURNO: NEGRAS",
+		marcador_x + 2, marcador_y + 1);
+
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_LIGHTING);
+}
 
 
 void Tablero::Comprobar_JaqueMate() {
