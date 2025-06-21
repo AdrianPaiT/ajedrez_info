@@ -12,6 +12,11 @@ public:
     void tecla(unsigned char key);  // Maneja eventos de teclado
     void Boton_Raton(int num_rival, int x, int y, int boton, bool abajo, bool espacio, bool ref_tecla);  // Maneja eventos del ratón
 
+
+    //Gestión de músicas
+    bool musicaJuegoActiva;
+    bool musicaMenuActiva;
+
 };
 // Enumeración que define los posibles estados del juego
 enum {
