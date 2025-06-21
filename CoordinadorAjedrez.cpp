@@ -1,6 +1,31 @@
 #include "CoordinadorAjedrez.h"
 
 void coordinador::dibuja() {
+
+
+	// Gestión de la música de fondo
+if (!musicaJuegoActiva && !musicaMenuActiva) {
+	ETSIDI::playMusica("sonidos/MusicaFondo.wav", true);
+	musicaMenuActiva = true;
+}
+
+// Soundtracks distintos en la interfaz de inicio y durante el gameplay
+if (estado == JUEGO && !musicaJuegoActiva) {
+	ETSIDI::stopMusica();
+	ETSIDI::playMusica("sonidos/gameplay.mp3", true);
+	musicaJuegoActiva = true;
+	musicaMenuActiva = false;
+}
+else if (estado != JUEGO && !musicaMenuActiva) {
+	ETSIDI::stopMusica();
+	ETSIDI::playMusica("sonidos/MusicaFondo.wav", true);
+	musicaMenuActiva = true;
+	musicaJuegoActiva = false;
+}
+
+
+
+	
 	gluLookAt(15, 18, 48,    // ubicación inicial del ojo (perspectiva)
 		15, 18, 0,			 // punto hacia el que mira el ojo
 		0.0, 1.0, 0.0);      // orientación hacia el eje Y+ 
