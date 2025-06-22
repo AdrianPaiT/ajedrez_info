@@ -347,3 +347,94 @@ void Tablero::inicializa(const int& tipojuego)
 
 }
 
+bool Tablero::Selec_Peon(int i, int j) {
+	bool sol = false;
+
+	if (color) { //blancas
+		if (matriz[i][j] == 0 && j == pos_y && i == (pos_x + 1) ) { sol = true; } //movimiento sin comer
+		if (matriz[i][j] != 0 && (j == (pos_y + 1) || j == (pos_y - 1)) && i == (pos_x + 1)) {sol = true;} //movimiento comiendo
+	}
+	else{ //negras
+		if (matriz[i][j] == 0 && j == pos_y && i == (pos_x - 1)) { sol = true; } //movimiento sin comer
+		if (matriz[i][j] != 0 && (j == (pos_y + 1) || j == (pos_y - 1)) && i == (pos_x - 1)) { sol = true; }; //movimiento comiendo
+	}
+	return sol;
+}
+
+bool Tablero::Selec_Rey(int i, int j) {
+	bool sol = false;
+	if (matriz[i][j] == 0 && (abs(pos_x - i) < 2) && (abs(pos_y - j) < 2) ) { sol = true; }                       
+	if (color && matriz[i][j] != 0 && (abs(pos_x - i) < 2) && (abs(pos_y - j) < 2)) { sol = true; } //Blanco
+	if (!color && matriz[i][j] != 0 && (abs(pos_x - i) < 2) && (abs(pos_y - j) < 2)) { sol = true; } //Negro
+	return sol;
+}
+
+bool Tablero::Selec_Alfil(int i, int j) { 
+	if (abs(pos_y - j) == abs(pos_x - i)) {
+		int valorii = (pos_x - i < 0 ? 1 : -1);
+		int valorjj = (pos_y - j < 0 ? 1 : -1);
+		int ii = pos_x;
+		int jj = pos_y;
+
+		while (ii != i - valorii && jj != j - valorjj) {
+			ii += valorii;
+			jj += valorjj;
+			if (ii < 0 || jj < 0)return false;
+			else if (matriz[ii][jj] != 0)return false;
+		}
+		if (matriz[i][j] == 0) return true;
+		if (color && matriz[i][j] != 0) return true;
+		else if (!color && matriz[i][j] != 0)return true;
+	}
+	return false;
+}
+bool Tablero::Selec_Caballo(int i, int j) {
+	bool sol = false;
+	if (color) {
+		if (((abs(pos_x - i) == 2 && abs(pos_y - j) == 1) || (abs(pos_x - i) == 1) && abs(pos_y - j) == 2)) sol = true;
+	}
+	else {
+		if (((abs(pos_x - i) == 2 && abs(pos_y - j) == 1) || (abs(pos_x - i) == 1) && abs(pos_y - j) == 2)) sol = true;
+	}
+	return sol;
+}
+
+bool Tablero::Selec_Torre(int i, int j) {
+	if (pos_y == j) {
+
+		for (int ii = std::min(pos_x, i) + 1; ii < std::max(pos_x, i); ii++) {
+			if (matriz[ii][pos_y] != 0) return false;
+		}
+
+		if (matriz[i][j] == 0) return true;
+		if (color && matriz[i][j] != 0) return true;
+		if (!color && matriz[i][j] != 0)return true;
+	}
+	if (pos_x == i) {
+
+		for (int jj = std::min(pos_y, j) + 1; jj < std::max(pos_y, j); jj++) {
+			if (matriz[pos_x][jj] != 0) return false;
+		}
+
+		if (matriz[i][j] == 0) return true;
+		if (color && matriz[i][j] != 0) return true;
+		if (!color && matriz[i][j] != 0) return true;
+	}
+	return false;
+}
+
+
+bool Tablero::Selec_Dama(int i, int j) {
+	if (Selec_Torre(i, j) || Selec_Alfil(i, j))return true;
+	return false;
+}
+
+bool Tablero::Selec_Arzobispo(int i, int j) {
+	if (Selec_Caballo(i, j) || Selec_Alfil(i, j))return true;
+	return false;
+}
+
+bool Tablero::Selec_Canciller(int i, int j) {
+	if (Selec_Torre(i, j) || Selec_Caballo(i, j))return true;
+	return false;
+}
