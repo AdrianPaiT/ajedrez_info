@@ -50,4 +50,10 @@ public:
 	void Mover_Pieza_1VS1(Vector destino);       // Mueve pieza a coordenadas
 	void inicializa(const int& tipojuego); // Inicializa tablero según modo de juego
 
+        //Logica de movimientos por tipo de pieza
+	bool Selec_Peon(int, int);            // Valida movimiento de peón
+	bool Selec_Rey(int, int);             // Valida movimiento de rey
+	bool Selec_Alfil(int, int);           // Valida movimiento de alfil
+	
+
 };
