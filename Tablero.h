@@ -54,6 +54,11 @@ public:
 	bool Selec_Peon(int, int);            // Valida movimiento de peón
 	bool Selec_Rey(int, int);             // Valida movimiento de rey
 	bool Selec_Alfil(int, int);           // Valida movimiento de alfil
+	bool Selec_Dama(int, int);            // Valida movimiento de dama
+	bool Selec_Torre(int, int);           // Valida movimiento de torre
+	bool Selec_Caballo(int, int);         // Valida movimiento de caballo
+	bool Selec_Arzobispo(int, int);       // Valida movimiento de arzobispo
+	bool Selec_Canciller(int, int);       // Valida movimiento de canciller
 	
 
 };
