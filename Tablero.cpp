@@ -411,29 +411,45 @@ void Tablero::DibujarMarcadorTurno() {
 	glEnable(GL_LIGHTING);
 }
 
-
+//Verifica si el jugador actual está en Jaque Mate o no
 void Tablero::Comprobar_JaqueMate() {
 	bool esJaqueMate = true;
-	bool escapar = false;
+	bool escapeEncontrado = false;
 
-	for (int i = 0; i < 8 && !escapar; i++) {
-		for (int j = 0; j < 10 && !escapar; j++) {
-			//l y k deberían ser las variables de un segundo par de bucles for anidados
-			//Pendiente verificar lógica de movimientos en visual
-		for (int l = 0; l < 8 && !escapar; l++) {
-			for (int k = 0; k < 10 && !escapar; k++) {
-				if (Selec_Mover(l, k, true)) {  //Mov permitido???
-					esJaqueMate = false;
-					escapar = true;
+	// Verificar todas las piezas del jugador en turno
+	for (int i = 0; i < 8 && !escapeEncontrado; i++) {
+		for (int j = 0; j < 10 && !escapeEncontrado; j++) {
+			if ((color && matriz[i][j] > 0) || (!color && matriz[i][j] < 0)) {
+				pos_x = i; pos_y = j;
+
+
+				for (int l = 0; l < 8 && !escapeEncontrado; l++) {
+					for (int k = 0; k < 10 && !escapeEncontrado; k++) {
+						if (Selec_Mover(l, k, true)) { 
+							esJaqueMate = false;
+							escapeEncontrado = true;
+						}
+					}
 				}
 			}
 		}
 	}
+
+	// Actualizar estado de jaque mate
 	if (esJaqueMate) {
 		if (color) {
-		jaqmateblancas = true;
+			jaqmateblancas = true;
 		}
+		else {
+			jaqmatenegras = true;
+		}
+	}
 	else {
-		jaqmateblancas = false;
+		jaqmateblancas = jaqmatenegras = false;
+	}
+
+	// Verificar tablas
+	if ((jaqmatenegras && !jaqnegras) || (jaqmateblancas && !jaqblancas)) {
+		tablas = true;
 	}
 }
