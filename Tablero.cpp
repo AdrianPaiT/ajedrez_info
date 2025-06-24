@@ -453,3 +453,23 @@ void Tablero::Comprobar_JaqueMate() {
 		tablas = true;
 	}
 }
+
+
+void Tablero::Comprobar_Jaque() {
+
+	if (Jaque(!color)) {
+		if (color) {
+			jaqnegras = true;
+		}
+		else {
+			jaqblancas = true;
+		}
+	}
+	else {
+		if (color)
+			jaqnegras = false;
+		else
+			jaqblancas = false;
+	}
+
+}
