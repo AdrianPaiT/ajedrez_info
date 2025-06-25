@@ -5,7 +5,9 @@
 #include "mundo.h"
 #include <iostream>
 #include <chrono>
-#include <thread>  
+#include <thread>  ç
+#include <alghoritm>
+#include <ctime>
 
 
 
@@ -57,7 +59,7 @@ void IA_Facil::mover(Tablero& tablero) {
     }
 
     if (verifica_mov) {
-        std::this_thread::sleep_for(std::chrono::seconds(1));   //Delay de 1 segundo
+        //std::this_thread::sleep_for(std::chrono::seconds(1));   //Delay de 1 segundo
         tablero.RealizarMovimientoIA(mov_x_IA, mov_y_IA, posicion_selecc);
     }
 }
