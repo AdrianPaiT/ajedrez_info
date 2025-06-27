@@ -182,4 +182,4 @@ using namespace std;
 	inline void Sprite::flip(bool h,bool v){horizontal_flip=h; vertical_flip=v;}
 	inline bool Sprite::isFlippedH() const{return horizontal_flip;}
 	inline bool Sprite::isFlippedV() const{return vertical_flip;}
-}//ETSIDI
+}
